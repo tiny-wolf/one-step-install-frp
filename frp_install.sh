@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+#---------------------------------------------------------------
+#welcome to use frp one setup install porgamme
+#author:sddkwolf time:2020-11-23 15:16:59"
+#---------------------------------------------------------------
+
+
 function install {
     clear
     read -r -p "确认安装frp吗？ [Y/n] " input
@@ -77,11 +83,14 @@ esac
 }
 
 function start_frpc {
-
+  clear
+  frpc -c /usr/local/frp/frp_0.34.1/frpc.ini
 }
 
-
-
+function start_frps {
+  clear
+  frpc -c /usr/local/frp/frp_0.34.1/frps.ini
+}
 
 
 function menu {
@@ -122,7 +131,9 @@ do
     2)
         un_install ;;
     3)
-        start_frp ;;
+        start_frpc ;;
+    4)
+        start_frps ;;
     *)
         clear
         echo "sorry,wrong selection" ;;
